@@ -67,10 +67,18 @@ body {
 /* PRODUTOS */
 .products {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr); /* PC */
     gap: 15px;
     margin-bottom: 40px;
 }
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .products {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
 
 .product {
     display: flex;
