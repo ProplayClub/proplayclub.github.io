@@ -30,10 +30,9 @@ body {
 }
 
 /* BANNER */
-/* BANNER */
 .banner {
     width: 100%;
-    height: 420px;
+    height: 420px; /* PC */
     background: url("banner1.jpg") center top no-repeat;
     background-size: cover;
 }
@@ -43,6 +42,18 @@ body {
     width: 100%;
     height: 4px;
     background: linear-gradient(to bottom, rgba(0,0,0,0), #141316);
+}
+
+/* CELULAR */
+@media (max-width: 768px) {
+    .banner {
+        height: 220px; /* ajuste fino aqui */
+        background-position: center top;
+    }
+
+    .banner-gradient {
+        height: 2px; /* opcional, mais discreto no mobile */
+    }
 }
 
 
@@ -78,7 +89,6 @@ body {
         grid-template-columns: repeat(2, 1fr);
     }
 }
-
 
 .product {
     display: flex;
