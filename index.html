@@ -1,0 +1,419 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>ProplayClub</title>
+
+<style>
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+body {
+    background-color: #141316;
+    color: #ffffff;
+}
+
+/* TOPO */
+.top-bar {
+    background-color: #000;
+    color: #fff;
+    text-align: center;
+    padding: 14px;
+    font-weight: bold;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+}
+
+/* BANNER */
+.banner {
+    width: 100%;
+    height: 420px;
+    background: url("banner1.jpg") center top no-repeat;
+    background-size: contain;
+}
+
+/* DEGRADÊ */
+.banner-gradient {
+    height: 30px;
+    background: linear-gradient(to bottom, rgba(0,0,0,0), #141316);
+}
+
+/* CONTAINER */
+.container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 15px 20px;
+}
+
+/* SEÇÕES */
+.section-image {
+    text-align: center;
+    margin: 30px 0 10px;
+}
+
+.section-image img {
+    max-width: 550px;
+    width: 100%;
+}
+
+/* PRODUTOS */
+.products {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.product {
+    display: flex;
+    flex-direction: column; /* organiza verticalmente */
+    justify-content: space-between; /* botão no final */
+    position: relative;
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 12px;
+    padding: 10px;
+    text-align: center;
+    color: #000;
+    transition: transform 0.25s ease, box-shadow 0.25s ease;
+}
+
+.product:hover {
+    transform: translateY(-5px);
+    border-color: #3a3a3a;
+    box-shadow: 0 8px 22px rgba(0,0,0,0.15);
+}
+
+.product img {
+    width: 100%;
+    height: 240px;
+    object-fit: contain;
+    border-radius: 8px;
+}
+
+.product h3 {
+    margin: 4px 0 8px;
+    font-size: 14px;
+    min-height: 12px; /* altura mínima igual para todos os títulos */
+}
+
+.product p {
+    font-size: 14px;
+    opacity: 0.85;
+}
+
+/* BOTÃO */
+.buy-btn {
+    margin-top: 2px;
+    display: inline-block;
+    padding: 10px 18px;
+    background-color: #FFCC02;
+    color: #000;
+    text-decoration: none;
+    font-weight: bold;
+    border-radius: 6px;
+    transition: background 0.2s ease, transform 0.2s ease;
+    position: relative;
+    z-index: 2;
+    align-self: center; /* centraliza horizontalmente */
+}
+
+.buy-btn:hover {
+    background-color: #ff9900;
+    transform: scale(1.03);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.75);
+}
+
+/* LINK INVISÍVEL */
+.full-link {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    z-index: 1;
+    display: block;
+    background: transparent;
+}
+
+/* AVALIAÇÕES */
+.reviews {
+    padding: 30px 20px;
+}
+
+.review-grid {
+    max-width: 1000px;
+    margin: auto;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+}
+
+.review {
+    background: #1e1e1e;
+    border-radius: 12px;
+    padding: 15px;
+    font-size: 14px;
+}
+
+.stars {
+    color: #FFC10A;
+    margin-bottom: 8px;
+    font-size: 16px;
+}
+
+/* RODAPÉ */
+.footer {
+    background: url("footer-bg.jpg") center top / cover no-repeat;
+    padding: 45px 20px 30px;
+    color: #000;
+}
+
+.footer-inner {
+    max-width: 1200px;
+    margin: auto;
+    display: flex;
+    gap: 30px;
+}
+
+/* ESQUERDA */
+.footer-left {
+    max-width: 320px;
+}
+
+.footer-left img {
+    width: 160px;
+    margin-bottom: 10px;
+}
+
+.footer-left p {
+    font-size: 13px;
+    line-height: 1.4;
+    font-weight: bold;
+}
+
+/* CENTRO */
+.footer-center {
+    flex: 1;
+    text-align: center;
+}
+
+/* SOCIAL */
+.footer-social {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    margin-bottom: 12px;
+}
+
+.footer-social a {
+    width: 42px;
+    height: 42px;
+    border: 2px solid #000;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.25s ease;
+}
+
+.footer-social a img {
+    width: 22px;
+    height: 22px;
+    filter: brightness(0);
+}
+
+.footer-social a:hover {
+    background: #000;
+}
+
+.footer-social a:hover img {
+    filter: brightness(0) invert(1);
+}
+
+/* TEXTO LEGAL */
+.footer-text {
+    font-size: 14px;
+    font-weight: bold;
+    line-height: 1.4;
+}
+
+/* RESPONSIVO */
+@media (max-width: 600px) {
+    .footer-inner {
+        flex-direction: column;
+        text-align: center;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<div class="top-bar">TUDO PARA TURBINAR SUA JOGATINA!</div>
+
+<div class="banner"></div>
+<div class="banner-gradient"></div>
+
+<div class="container">
+
+    <!-- PARCEIRO AMAZON -->
+    <div class="section-image">
+        <img src="amazon-destaque.png">
+    </div>
+    <div class="products">
+        <div class="product">
+            <a href="https://amzn.to/4rymqZf" class="full-link" target="_blank"></a>
+            <img src="produto-amazon1.png">
+            <h3>Resident Evil Requiem - PlayStation 5</h3>
+            <a class="buy-btn" href="https://amzn.to/4rymqZf" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="https://amzn.to/4rHxdAI" class="full-link" target="_blank"></a>
+            <img src="produto-amazon2.png">
+            <h3>Resident Evil 4 - PlayStation 5</h3>
+            <a class="buy-btn" href="https://amzn.to/4rHxdAI" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="https://amzn.to/3O1KyVT" class="full-link" target="_blank"></a>
+            <img src="produto-amazon3.png">
+            <h3>PlayStation®5 Slim Digital 825GB – Pacote ASTRO BOT e Gran Turismo 7</h3>
+            <a class="buy-btn" href="https://amzn.to/3O1KyVT" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="https://amzn.to/3ZliOOr" class="full-link" target="_blank"></a>
+            <img src="produto-amazon4.png">
+            <h3>Controle DualSense - PlayStation 5</h3>
+            <a class="buy-btn" href="https://amzn.to/3ZliOOr" target="_blank">Comprar</a>
+        </div>
+    </div>
+
+    <!-- PARCEIRO NUVEM -->
+    <div class="section-image">
+        <img src="nuuvem-destaque.png">
+    </div>
+    <div class="products">
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-nuuvem1.png">
+            <h3>Produto 1</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-nuuvem2.png">
+            <h3>Produto 2</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-nuuvem3.png">
+            <h3>Produto 3</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-nuuvem4.png">
+            <h3>Produto 4</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+    </div>
+
+    <!-- PARCEIRO DIVERSOS -->
+    <div class="section-image">
+        <img src="kabum-destaque.png">
+    </div>
+    <div class="products">
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-div1.png">
+            <h3>Produto 1</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-div2.png">
+            <h3>Produto 2</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-div3.png">
+            <h3>Produto 3</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+        <div class="product">
+            <a href="#" class="full-link" target="_blank"></a>
+            <img src="produto-div4.png">
+            <h3>Produto 4</h3>
+            <a class="buy-btn" href="#" target="_blank">Comprar</a>
+        </div>
+    </div>
+<!-- AVALIAÇÕES -->
+<!-- AVALIAÇÕES -->
+<div class="section-image" style="margin-bottom: 10px;">
+    <img src="avaliacoes.png" alt="Avaliações">
+</div>
+
+<div class="reviews" style="padding-top: 0;">
+    <h2 style="text-align:center; margin-bottom:20px;"></h2>
+    <div class="review-grid">
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Produto excelente, chegou rápido e funciona perfeitamente. Recomendo!</p>
+            <strong>- João S.</strong>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★☆</div>
+            <p>Qualidade muito boa, mas a embalagem podia ser melhor.</p>
+            <strong>- Maria L.</strong>
+        </div>
+        <div class="review">
+            <div class="stars">★★★★★</div>
+            <p>Excelente atendimento e produtos de ótima qualidade. Vou comprar de novo!</p>
+            <strong>- Pedro R.</strong>
+        </div>
+    </div>
+</div>
+
+</div>
+
+<div class="footer">
+    <div class="footer-inner">
+
+        <div class="footer-left">
+            <img src="logo-footer.png">
+            <p>
+                A loja ProplayClub é uma vitrine gamer dedicada a reunir as melhores ofertas e produtos do momento em jogos, acessórios e periféricos, sempre pensando na melhor experiência para quem joga.
+            </p>
+        </div>
+
+        <div class="footer-center">
+            <div class="footer-social">
+                <a href="https://chat.whatsapp.com/Bqqvgh5eRn4IeTjsR65fcd" target="_blank">
+                    <img src="whatsapp.png">
+                </a>
+                <a href="https://www.facebook.com/proplayclubgames/" target="_blank">
+                    <img src="facebook.png">
+                </a>
+                <a href="https://www.instagram.com/proplayclub" target="_blank">
+                    <img src="instagram.png">
+                </a>
+            </div>
+
+            <div class="footer-text">
+                Ao clicar em comprar, você será redirecionado para nossos parceiros.<br>
+                ProplayClub © 2010 – 2026
+            </div>
+        </div>
+
+    </div>
+</div>
+
+</body>
+</html>
